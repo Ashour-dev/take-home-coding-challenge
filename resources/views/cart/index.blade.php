@@ -8,7 +8,7 @@
     <title>Cart</title>
 </head>
 <body>
-    @if (count($cart)==0)
+    @if (count($cart)!=0)
     {{-- {{dd($cart)}} --}}
     <h1 class="p-3">Cart</h1>
     <div class="container-fluid">
