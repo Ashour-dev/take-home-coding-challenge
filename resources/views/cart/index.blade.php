@@ -22,6 +22,7 @@
                             <th scope="col">price</th>
                             <th scope="col">Shipped from</th>
                             <th scope="col">Weight</th>
+                            <th scope="col" colspan="1">Options</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,11 @@
                                 <td>{{$product['Item_price']}}</td>
                                 <td>{{$product['Country']}}</td>
                                 <td>{{$product['Weight']}}</td>
+                                <td>
+                                    <a href="{{$product['link']}}">
+                                        <button type="button" class="btn btn-dark shadow-none">View</button>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
