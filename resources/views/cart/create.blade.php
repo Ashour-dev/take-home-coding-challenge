@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200" />
     <title>Add new product</title>
 </head>
 <body>
+    <a href="/cart">
+        <span class="material-symbols-outlined m-3 fs-1">arrow_back</span>
+    </a>
     <div class="container position-absolute top-50 start-50 translate-middle">
         <div class="create-container">
             <h1 class="text-center">
