@@ -19,6 +19,7 @@
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">type</th>
+                            <th scope="col">Quantity</th>
                             <th scope="col">price</th>
                             <th scope="col">Shipped from</th>
                             <th scope="col">Weight</th>
@@ -30,6 +31,7 @@
                             <tr class="products-index-table">
                                 <td>{{$product['name']}}</td>
                                 <td>{{$product['Item_type']}}</td>
+                                <td>{{$product['quantity']}}</td>
                                 <td>{{$product['Item_price']}}</td>
                                 <td>{{$product['Country']}}</td>
                                 <td>{{$product['Weight']}}</td>

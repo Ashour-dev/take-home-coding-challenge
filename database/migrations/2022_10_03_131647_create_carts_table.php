@@ -18,6 +18,7 @@ class CreateCartsTable extends Migration
             $table->string('name');
             $table->string('Item_type');
             $table->char('Country',3);
+            $table->integer('quantity');
             $table->float('Item_price',6,2);
             $table->float('Weight',4,1);
             $table->text('link');
