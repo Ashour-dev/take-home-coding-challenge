@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Cart</title>
 </head>
 <body>
-    <h1>Cart</h1>
-    @if (count($cart)!=0)
+    @if (count($cart)==0)
     {{-- {{dd($cart)}} --}}
+    <h1 class="p-3">Cart</h1>
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
             <div class="col-11 mx-auto">
@@ -39,7 +40,7 @@
         </div>
     </div>
     @else
-    <h3>Your Cart is Empty</h3>
+    <h3 class=" my-5 text-center">Your Cart is Empty</h3>
     @endif
 </body>
 </html>
