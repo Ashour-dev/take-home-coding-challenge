@@ -10823,3 +10823,7 @@ textarea.form-control-lg {
 .products-index-table * {
   vertical-align: middle;
 }
+
+.create-container label {
+  margin-bottom: 0.46rem;
+}

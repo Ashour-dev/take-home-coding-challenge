@@ -25,7 +25,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        return view('cart.create');
     }
 
     /**

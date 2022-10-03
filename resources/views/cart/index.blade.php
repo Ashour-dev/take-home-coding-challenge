@@ -13,7 +13,10 @@
     <h1 class="p-3">Cart</h1>
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
-            <div class="col-11 mx-auto">
+            <div class="col-9 mx-auto">
+                <a class="float-end mb-3" href="cart/create">
+                    <button type="button" class="btn btn-outline-success">Add new Item</button>
+                </a>
                 <table class="table w-100 table-hover text-center">
                     <thead>
                         <tr>
