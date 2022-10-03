@@ -56,7 +56,12 @@
                     </div>
                     <div class="col-3">
                         <label for="Country">Shipped from:</label>
-                        <input class="form-control" type="text" name="Country" id="Country" value="{{ old('Country') ?? '' }}">
+                        <select class="form-select shadow-sm" name="Country" id="Country" value="{{ old('Country') ?? '' }}">
+                            <option selected>Select</option>
+                            <option value="US">US</option>
+                            <option value="UK">UK</option>
+                            <option value="CN">CN</option>
+                        </select>
                         @error('Country')
                             <div class="alert alert-danger mt-2">
                                 Country
