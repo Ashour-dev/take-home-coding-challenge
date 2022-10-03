@@ -13,6 +13,14 @@
     <h1 class="p-3">Cart</h1>
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
+            <div class="row w-100 justify-content-center">
+                <div class="col-11 mx-auto">
+                    @if (session('item-added'))
+                        <div class="alert alert-success">
+                            {{session('item-added')}}
+                        </div>
+                    @endif
+                </div>
             <div class="col-9 mx-auto">
                 <a class="float-end mb-3" href="cart/create">
                     <button type="button" class="btn btn-outline-primary">Add new Item</button>

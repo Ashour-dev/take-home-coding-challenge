@@ -37,7 +37,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'min:5','max:255'],
+            'name' => ['required', 'string', 'min:3','max:255'],
             'Item_type' => ['required', 'string', 'min:3','max:255'],
             'link' => ['required', 'string','min:10','max:65000'],
             'price' => ['required', 'numeric','min:1'],
@@ -62,18 +62,8 @@ class CartController extends Controller
         $newItem->Shipping = ($data["Weight"]*10)*$rate;
         // $newItem->VAT = 'To be calculated';
         $newItem->save();
+        return redirect()->route('cart.index')->with('item-added','New Item is added');
         }
-        // switch($data["Country"]){
-        //     case 'US':
-        //         $rate=2;
-        //         break;
-        //     case 'UK':
-        //         $rate=3;
-        //         break;
-        //     case 'CN':
-        //         $rate=2;
-        //         break;
-        // }
 
     /**
      * Display the specified resource.

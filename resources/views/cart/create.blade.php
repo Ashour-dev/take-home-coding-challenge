@@ -23,7 +23,7 @@
                     <div class="col-6">
                         <label for="name">Name*</label>
                         <input class="form-control" type="text" name="name" id="name"
-                            value="{{ old('name') ?? '' }}" required autocomplete="on" autofocus minlength="5">
+                            value="{{ old('name') ?? '' }}" required autocomplete="on" autofocus minlength="3">
                         @error('name')
                             <div class="alert alert-danger mt-2">
                                 Product name

@@ -24,7 +24,7 @@ class CreateCartsTable extends Migration
             $table->text('link');
             $table->integer('Rate');
             $table->float('Shipping',5,2);
-            $table->float('VAT',7,4);
+            $table->float('VAT',7,4)->nullable();
             $table->timestamps();
         });
     }
