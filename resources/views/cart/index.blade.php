@@ -40,7 +40,7 @@
         </div>
     </div>
     @else
-    <h3 class=" my-5 text-center">Your Cart is Empty</h3>
+        <h3 class=" my-5 text-center">Your Cart is Empty</h3>
     @endif
 </body>
 </html>
