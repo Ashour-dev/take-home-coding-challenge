@@ -127,16 +127,18 @@ class CartController extends Controller
         $newItem->Country = $data["Country"];
         $newItem->quantity = $data["quantity"];
         $newItem->Item_price = $data["Item_price"]*$data["quantity"];
-        $newItem->Weight = $data["Weight"];
         $newItem->link = $data["link"];
+        if(isset($data["Weight"]))
+            $newItem->Weight = $data["Weight"];
         if(isset($data["Country"])){
             if($data["Country"]=='UK'||$data["Country"]=='CN')
                 $rate=2;
             else
                 $rate=3;
             $newItem->Rate =$rate;
-            $newItem->Shipping = ($data["Weight"]*10)*$rate;
         }
+        if(isset($data["Country"]) && isset($data["Weight"]))
+            $newItem->Shipping = ($data["Weight"]*10)*$rate;
         $newItem->VAT=($newItem->Item_price*14)/100;
         $newItem->save();
         return redirect()->route('cart.index')->with('item-added','New Item is added');
@@ -188,16 +190,18 @@ class CartController extends Controller
         $cart->Country = $data["Country"];
         $cart->quantity = $data["quantity"];
         $cart->Item_price = $data["Item_price"]*$data["quantity"];
-        $cart->Weight = $data["Weight"];
         $cart->link = $data["link"];
+        if(isset($data["Weight"]))
+            $cart->Weight = $data["Weight"];
         if(isset($data["Country"])){
             if($data["Country"]=='UK'||$data["Country"]=='CN')
                 $rate=2;
             else
                 $rate=3;
             $cart->Rate =$rate;
-            $cart->Shipping = ($data["Weight"]*10)*$rate;
         }
+        if(isset($data["Country"]) && isset($data["Weight"]))
+            $cart->Shipping = ($data["Weight"]*10)*$rate;
         $cart->VAT=($cart->Item_price*14)/100;
         $cart->update();
         return redirect()->route('cart.index')->with('item-updated','Your item was modified successfully');
