@@ -59,6 +59,7 @@ class CartController extends Controller
             $rate=2;
         else
             $rate=3;
+            
         $newItem->Rate =$rate;
         $newItem->Shipping = ($data["Weight"]*10)*$rate;
         $newItem->VAT=($newItem->Item_price*14)/100;

@@ -61,7 +61,7 @@
                     <div class="col-3">
                         <label for="Country">Shipped from:</label>
                         <select class="form-select shadow-sm" name="Country" id="Country" value="{{ old('Country') ?? '' }}">
-                            <option selected>Select</option>
+                            <option value="" selected>Select</option>
                             <option value="US">US</option>
                             <option value="UK">UK</option>
                             <option value="CN">CN</option>
@@ -96,7 +96,7 @@
                     <div class="col-3">
                         <label for="Weight">Weight:</label>
                         <input class="form-control" type="number" name="Weight" id="Weight" value="{{ old('Weight') ?? '' }}" required
-                            minlength="1">
+                            minlength="1" step=".01">
                         @error('Weight')
                             <div class="alert alert-danger mt-2">
                                 {{ $message }}

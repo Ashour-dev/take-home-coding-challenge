@@ -17,13 +17,13 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('Item_type');
-            $table->char('Country',3);
+            $table->char('Country',3)->nullable();
             $table->integer('quantity');
             $table->float('Item_price',6,2);
             $table->float('Weight',4,1);
             $table->text('link');
-            $table->integer('Rate');
-            $table->float('Shipping',5,2);
+            $table->integer('Rate')->nullable();
+            $table->float('Shipping',5,2)->nullable();
             $table->float('VAT',7,4)->nullable();
             $table->timestamps();
         });
