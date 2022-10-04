@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CartController extends Controller
 {
@@ -40,8 +41,9 @@ class CartController extends Controller
             'name' => ['required', 'string', 'min:3','max:255'],
             'Item_type' => ['required', 'string', 'min:3','max:255'],
             'link' => ['required', 'string','min:10','max:65000'],
-            'price' => ['required', 'numeric','min:1'],
+            'Item_price' => ['required', 'numeric','min:1'],
             'quantity' => ['required', 'numeric','min:1','max:5'],
+            'Country'=> Rule::in(['','UK', 'US','CN']),
         ]);
         $data = $request->all();
 
@@ -57,10 +59,9 @@ class CartController extends Controller
             $rate=2;
         else
             $rate=3;
-        
         $newItem->Rate =$rate;
         $newItem->Shipping = ($data["Weight"]*10)*$rate;
-        // $newItem->VAT = 'To be calculated';
+        $newItem->VAT=($newItem->Item_price*14)/100;
         $newItem->save();
         return redirect()->route('cart.index')->with('item-added','New Item is added');
         }
