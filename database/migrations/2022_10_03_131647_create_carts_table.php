@@ -20,7 +20,7 @@ class CreateCartsTable extends Migration
             $table->char('Country',3)->nullable();
             $table->integer('quantity');
             $table->float('Item_price',6,2);
-            $table->float('Weight',4,1);
+            $table->float('Weight',4,1)->nullable();
             $table->text('link');
             $table->integer('Rate')->nullable();
             $table->float('Shipping',5,2)->nullable();

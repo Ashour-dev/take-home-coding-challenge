@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-3">
                         <label for="Weight">Weight:</label>
-                        <input class="form-control" type="number" name="Weight" id="Weight" value="{{ old('Weight') ?? $cart->Weight }}" required
+                        <input class="form-control" type="number" name="Weight" id="Weight" value="{{ old('Weight') ?? $cart->Weight }}"
                             minlength="1" step=".01">
                         @error('Weight')
                             <div class="alert alert-danger mt-2">
