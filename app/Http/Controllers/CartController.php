@@ -55,13 +55,14 @@ class CartController extends Controller
         $newItem->Item_price = $data["Item_price"]*$data["quantity"];
         $newItem->Weight = $data["Weight"];
         $newItem->link = $data["link"];
-        if($data["Country"]=='UK'||$data["Country"]=='CN')
-            $rate=2;
-        else
-            $rate=3;
-            
-        $newItem->Rate =$rate;
-        $newItem->Shipping = ($data["Weight"]*10)*$rate;
+        if(isset($data["Country"])){
+            if($data["Country"]=='UK'||$data["Country"]=='CN')
+                $rate=2;
+            else
+                $rate=3;
+            $newItem->Rate =$rate;
+            $newItem->Shipping = ($data["Weight"]*10)*$rate;
+        }
         $newItem->VAT=($newItem->Item_price*14)/100;
         $newItem->save();
         return redirect()->route('cart.index')->with('item-added','New Item is added');
