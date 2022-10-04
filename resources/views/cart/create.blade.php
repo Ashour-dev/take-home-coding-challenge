@@ -104,7 +104,11 @@
                         @enderror
                     </div>
                     <div class="col-12 text-center mt-3">
-                        <button class="btn btn-outline-dark" type="submit">Add to cart</button>
+                        <button class="btn btn-outline-dark" type="submit">
+                            <span class="material-symbols-outlined align-middle px-3">
+                                add_shopping_cart
+                            </span>
+                        </button>
                     </div>
                 </div>
             </form>

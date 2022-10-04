@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1 class="p-4">Cart</h1>
+    {{-- {{dd($calculatedData)}}; --}}
     <div class="w-25 position-absolute top-0 end-0 pt-3 pe-3 text-center">
         @if (session('item-added'))
         <div class="alert alert-success">
@@ -94,6 +95,12 @@
                 <h3 class=" my-5 text-center">Your Cart is Empty</h3>
                 @endif
             </div>
+        </div>
+        <div class="position-fixed bottom-0 start-0 p-3 m-3 border border-secondary">
+            <span>Subtotal: {{$calculatedData['subtotal']}}</span><br>
+            <span>Shipping: {{$calculatedData['totalShipping']}}</span><br>
+            <span>Vat: {{$calculatedData['totalVat']}}</span><br>
+            <span>Total: {{$calculatedData['total']}}</span>
         </div>
     </div>
 </body>
