@@ -34,13 +34,13 @@
                     </div>
                     <div class="col-6">
                         <label for="Item_type">Category*</label>
-                            <select class="form-select shadow-sm" name="Item_type" id="Item_type" value="{{ old('Item_type') ?? $cart->Item_type }}">
-                                <option value="">Select</option>
-                                <option value="T-shirt">T-shirt</option>
-                                <option value="Blouse">Blouse</option>
-                                <option value="Pants">Pants</option>
-                                <option value="Shoes">Shoes</option>
-                                <option value="Jacket">Jacket</option>
+                            <select class="form-select shadow-sm" name="Item_type" id="Item_type" >
+                                <option value="" {{($cart->Item_type=='') ? 'selected': '' }}>Select</option>
+                                <option value="T-shirt" {{($cart->Item_type=='T-shirt') ? 'selected': '' }}>T-shirt</option>
+                                <option value="Blouse" {{($cart->Item_type=='Blouse') ? 'selected': '' }}>Blouse</option>
+                                <option value="Pants" {{($cart->Item_type=='Pants') ? 'selected': '' }}>Pants</option>
+                                <option value="Shoes" {{($cart->Item_type=='Shoes') ? 'selected': '' }}>Shoes</option>
+                                <option value="Jacket" {{($cart->Item_type=='Jacket') ? 'selected': '' }}>Jacket</option>
                             </select>
                         @error('Item_type')
                             <div class="alert alert-danger mt-2">
@@ -61,11 +61,11 @@
                     </div>
                     <div class="col-3">
                         <label for="Country">Shipped from:</label>
-                        <select class="form-select shadow-sm" name="Country" id="Country" value="{{ old('Country') ?? $cart->Country }}">
-                            <option value="" selected>Select</option>
-                            <option value="US">US</option>
-                            <option value="UK">UK</option>
-                            <option value="CN">CN</option>
+                        <select class="form-select shadow-sm" name="Country" id="Country">
+                            <option value="" {{($cart->Country=='') ? 'selected' : ''}}>Select</option>
+                            <option value="US" {{($cart->Country=='US') ? 'selected' : ''}}>US</option>
+                            <option value="UK" {{($cart->Country=='UK') ? 'selected' : ''}}>UK</option>
+                            <option value="CN" {{($cart->Country=='CN') ? 'selected' : ''}}>CN</option>
                         </select>
                         @error('Country')
                             <div class="alert alert-danger mt-2">

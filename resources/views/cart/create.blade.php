@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-6">
                         <label for="Item_type">Category*</label>
-                            <select class="form-select shadow-sm" name="Item_type" id="Item_type" value="{{ old('Item_type') ?? '' }}">
+                            <select class="form-select shadow-sm" name="Item_type" id="Item_type">
                                 <option selected>Select</option>
                                 <option value="T-shirt">T-shirt</option>
                                 <option value="Blouse">Blouse</option>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-3">
                         <label for="Country">Shipped from:</label>
-                        <select class="form-select shadow-sm" name="Country" id="Country" value="{{ old('Country') ?? '' }}">
+                        <select class="form-select shadow-sm" name="Country" id="Country">
                             <option value="" selected>Select</option>
                             <option value="US">US</option>
                             <option value="UK">UK</option>
