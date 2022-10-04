@@ -46,7 +46,7 @@
                             <th scope="col">price</th>
                             <th scope="col">Shipped from</th>
                             <th scope="col">Weight</th>
-                            <th scope="col" colspan="3">Options</th>
+                            <th scope="col">Options</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,7 +58,7 @@
                                 <td>{{$product['Item_price']}}</td>
                                 <td>{{$product['Country']}}</td>
                                 <td>{{$product['Weight']}}</td>
-                                <td>
+                                <td class="d-flex justify-content-around">
                                     <a href="{{$product['link']}}">
                                         <button type="button" class="btn btn-sm btn-outline-dark shadow-none">
                                             <span class="material-symbols-outlined">
@@ -66,8 +66,7 @@
                                             </span>
                                         </button>
                                     </a>
-                                </td>
-                                <td>
+                                
                                     <a href="/cart/{{$product['id']}}/edit">
                                         <button type="button" class="btn btn-sm btn-outline-dark shadow-none">
                                             <span class="material-symbols-outlined">
@@ -75,8 +74,7 @@
                                             </span>
                                         </button>
                                     </a>
-                                </td>
-                                <td>
+                                
                                     <form action="{{ route('cart.destroy', $product) }}" method="POST"
                                         class="cart-form-destroyer">
                                         @csrf
