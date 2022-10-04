@@ -35,11 +35,11 @@
                         <label for="Item_type">Category*</label>
                             <select class="form-select shadow-sm" name="Item_type" id="Item_type">
                                 <option value="" selected>Select</option>
-                                <option value="T-shirt">T-shirt</option>
-                                <option value="Blouse">Blouse</option>
-                                <option value="Pants">Pants</option>
-                                <option value="Shoes">Shoes</option>
-                                <option value="Jacket">Jacket</option>
+                                <option value="T-shirt" {{ old('Item_type') == 'T-shirt' ? "selected" : "" }}>T-shirt</option>
+                                <option value="Blouse" {{ old('Item_type') == 'Blouse' ? "selected" : "" }}>Blouse</option>
+                                <option value="Pants" {{ old('Item_type') == 'Pants' ? "selected" : "" }}>Pants</option>
+                                <option value="Shoes" {{ old('Item_type') == 'Shoes' ? "selected" : "" }}>Shoes</option>
+                                <option value="Jacket" {{ old('Item_type') == 'Jacket' ? "selected" : "" }}>Jacket</option>
                             </select>
                         @error('Item_type')
                             <div class="alert alert-danger mt-2">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-12 ">
                         <label for="link">Link:*</label>
-                        <input class="form-control" type="text" name="link" id="link" value="{{ old('link') ?? '' }}">
+                        <input class="form-control" type="text" name="link" id="link" value="{{ old('link') ?? '' }}" minlength="10">
                         @error('link')
                             <div class="alert alert-danger mt-2">
                                 link
@@ -62,9 +62,9 @@
                         <label for="Country">Shipped from:</label>
                         <select class="form-select shadow-sm" name="Country" id="Country">
                             <option value="" selected>Select</option>
-                            <option value="US">US</option>
-                            <option value="UK">UK</option>
-                            <option value="CN">CN</option>
+                            <option value="US" {{ old('Country') == 'US' ? "selected" : "" }}>US</option>
+                            <option value="UK" {{ old('Country') == 'UK' ? "selected" : "" }}>UK</option>
+                            <option value="CN" {{ old('Country') == 'CN' ? "selected" : "" }}>CN</option>
                         </select>
                         @error('Country')
                             <div class="alert alert-danger mt-2">
