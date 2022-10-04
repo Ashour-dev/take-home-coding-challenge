@@ -87,7 +87,7 @@ class CartController extends Controller
      */
     public function edit(cart $cart)
     {
-        //
+        return view('cart.edit',compact('cart'));
     }
 
     /**

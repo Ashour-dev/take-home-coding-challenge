@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200" />
-    <title>Add new product</title>
+    <title>Edit product</title>
 </head>
 <body>
     <a href="/cart">
@@ -15,7 +15,7 @@
     <div class="container position-absolute top-50 start-50 translate-middle">
         <div class="create-container">
             <h1 class="text-center">
-                Add a new product
+                Edit product
             </h1>
             <form class="container-fluid px-5 mt-4 w-50 mx-auto" action="{{ route('cart.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -23,7 +23,7 @@
                     <div class="col-6">
                         <label for="name">Name*</label>
                         <input class="form-control" type="text" name="name" id="name"
-                            value="{{ old('name') ?? '' }}" required autocomplete="on" autofocus minlength="3">
+                            value="{{ old('name') ?? $cart->name }}" required autocomplete="on" autofocus minlength="3">
                         @error('name')
                             <div class="alert alert-danger mt-2">
                                 Product name
@@ -33,8 +33,8 @@
                     </div>
                     <div class="col-6">
                         <label for="Item_type">Category*</label>
-                            <select class="form-select shadow-sm" name="Item_type" id="Item_type" value="{{ old('Item_type') ?? '' }}">
-                                <option selected>Select</option>
+                            <select class="form-select shadow-sm" name="Item_type" id="Item_type" value="{{ old('Item_type') ?? $cart->Item_type }}">
+                                <option value="">Select</option>
                                 <option value="T-shirt">T-shirt</option>
                                 <option value="Blouse">Blouse</option>
                                 <option value="Pants">Pants</option>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-12 ">
                         <label for="link">Link:*</label>
-                        <input class="form-control" type="text" name="link" id="link" value="{{ old('link') ?? '' }}">
+                        <input class="form-control" type="text" name="link" id="link" value="{{ old('link') ?? $cart->link }}">
                         @error('link')
                             <div class="alert alert-danger mt-2">
                                 link
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-3">
                         <label for="Country">Shipped from:</label>
-                        <select class="form-select shadow-sm" name="Country" id="Country" value="{{ old('Country') ?? '' }}">
+                        <select class="form-select shadow-sm" name="Country" id="Country" value="{{ old('Country') ?? $cart->Country }}">
                             <option value="" selected>Select</option>
                             <option value="US">US</option>
                             <option value="UK">UK</option>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-3">
                         <label for="Item_price">Price:*</label>
-                        <input class="form-control" type="number" name="Item_price" id="Item_price" value="{{ old('Item_price') ?? '' }}" required
+                        <input class="form-control" type="number" name="Item_price" id="Item_price" value="{{ old('Item_price') ?? $cart->Item_price }}" required
                             min="1">
                         @error('Item_price')
                             <div class="alert alert-danger mt-2">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-3">
                         <label for="quantity">Quantity:*</label>
-                        <input class="form-control" type="number" name="quantity" id="quantity" value="{{ old('quantity') ?? '' }}" required
+                        <input class="form-control" type="number" name="quantity" id="quantity" value="{{ old('quantity') ?? $cart->quantity }}" required
                             min="1" max="5">
                         @error('quantity')
                             <div class="alert alert-danger mt-2">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-3">
                         <label for="Weight">Weight:</label>
-                        <input class="form-control" type="number" name="Weight" id="Weight" value="{{ old('Weight') ?? '' }}" required
+                        <input class="form-control" type="number" name="Weight" id="Weight" value="{{ old('Weight') ?? $cart->Weight }}" required
                             minlength="1" step=".01">
                         @error('Weight')
                             <div class="alert alert-danger mt-2">
@@ -104,7 +104,7 @@
                         @enderror
                     </div>
                     <div class="col-12 text-center mt-3">
-                        <button class="btn btn-outline-dark" type="submit">Add to cart</button>
+                        <button class="btn btn-outline-dark" type="submit">Save</button>
                     </div>
                 </div>
             </form>
