@@ -23,6 +23,13 @@
         </div>
         @endif
     </div>
+    <div class="w-25 position-absolute top-0 end-0 pt-3 pe-3 text-center">
+        @if (session('item-deleted'))
+        <div class="alert alert-danger">
+            {{session('item-deleted')}}
+        </div>
+        @endif
+    </div>
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
             <div class="col-8 mx-auto">
@@ -39,7 +46,7 @@
                             <th scope="col">price</th>
                             <th scope="col">Shipped from</th>
                             <th scope="col">Weight</th>
-                            <th scope="col" colspan="2">Options</th>
+                            <th scope="col" colspan="3">Options</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,7 +60,11 @@
                                 <td>{{$product['Weight']}}</td>
                                 <td>
                                     <a href="{{$product['link']}}">
-                                        <button type="button" class="btn btn-sm btn-outline-dark shadow-none">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-dark shadow-none">
+                                            <span class="material-symbols-outlined">
+                                                open_in_new
+                                            </span>
+                                        </button>
                                     </a>
                                 </td>
                                 <td>
@@ -64,6 +75,18 @@
                                             </span>
                                         </button>
                                     </a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('cart.destroy', $product) }}" method="POST"
+                                        class="cart-form-destroyer">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-outline-danger shadow-none">
+                                            <span class="material-symbols-outlined">
+                                                delete
+                                            </span>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

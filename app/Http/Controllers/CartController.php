@@ -137,6 +137,7 @@ class CartController extends Controller
      */
     public function destroy(cart $cart)
     {
-        //
+        $cart->delete();
+        return redirect()->route('cart.index')->with('item-deleted','Your item was deleted successfully');
     }
 }
