@@ -8,23 +8,21 @@
     <title>Cart</title>
 </head>
 <body>
-    @if (count($cart)!=0)
-    {{-- {{dd($cart)}} --}}
-    <h1 class="p-3">Cart</h1>
+    <h1 class="p-4">Cart</h1>
+    <div class="w-25 position-absolute top-0 end-0 pt-3 pe-3 text-center">
+        @if (session('item-added'))
+        <div class="alert alert-success">
+            {{session('item-added')}}
+        </div>
+        @endif
+    </div>
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
-            <div class="row w-100 justify-content-center">
-                <div class="col-11 mx-auto">
-                    @if (session('item-added'))
-                        <div class="alert alert-success">
-                            {{session('item-added')}}
-                        </div>
-                    @endif
-                </div>
-            <div class="col-9 mx-auto">
+            <div class="col-8 mx-auto">
                 <a class="float-end mb-3" href="cart/create">
                     <button type="button" class="btn btn-outline-primary">Add new Item</button>
                 </a>
+                @if (count($cart)!=0)
                 <table class="table w-100 table-hover text-center">
                     <thead>
                         <tr>
@@ -55,11 +53,11 @@
                         @endforeach
                     </tbody>
                 </table>
+                @else
+                <h3 class=" my-5 text-center">Your Cart is Empty</h3>
+                @endif
             </div>
         </div>
     </div>
-    @else
-        <h3 class=" my-5 text-center">Your Cart is Empty</h3>
-    @endif
 </body>
 </html>
