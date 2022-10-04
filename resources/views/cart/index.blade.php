@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1 class="p-4">Cart</h1>
-    {{dd($calculatedData)}};
+    {{-- {{dd($calculatedData)}}; --}}
     <div class="position-absolute top-0 end-0 pt-3 pe-3 text-center">
         @if (session('item-added'))
         <div class="alert alert-success">
@@ -97,13 +97,25 @@
             </div>
         </div>
         @if (count($cart)!=0)
-            <div class="position-fixed bottom-0 start-0 p-3 m-3 border border-secondary">
-                <span>Subtotal: {{$calculatedData['subtotal']}}</span><br>
-                <span>Shipping: {{$calculatedData['totalShipping']}}</span><br>
-                <span>Vat: {{$calculatedData['totalVat']}}</span><br>
+            <div class="receipt position-fixed bottom-0 start-0 p-3 m-3 border border-secondary">
+                <span>Subtotal: {{$calculatedData['subtotal']}}</span>
+                <span>Shipping: {{$calculatedData['totalShipping']}}</span>
+                <span>Vat: {{$calculatedData['totalVat']}}</span>
+                @if(isset($calculatedData['discounts']))
+                    <span>Discounts:</span>
+                    @if ($calculatedData['offShoes']>0)
+                        <span class="ms-5">10% off shoes: -${{$calculatedData['offShoes']}}</span>
+                    @endif
+                    @if ($calculatedData['jacketsDiscounted'])
+                        <span class="ms-5">50% off jacket: -${{$calculatedData['jacketDiscount']}}</span>
+                    @endif
+                    @if ($calculatedData['offShipping'])
+                        <span class="ms-5">$10 of shipping: -$10</span>
+                    @endif
+                @endif
                 <span>Total: {{$calculatedData['total']}}</span>
-            </div>
-        @endif
+                </div>
+                @endif
     </div>
 </body>
 </html>

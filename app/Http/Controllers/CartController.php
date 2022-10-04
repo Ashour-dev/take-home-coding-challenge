@@ -27,6 +27,7 @@ class CartController extends Controller
             $tops=0;
             $jacketsDiscounted=false;
             $jacketDiscount=0;
+            $discounts=false;
             foreach($cart as $product){
                 $subtotal+=$product['Item_price'];
                 $totalVat+=$product['VAT'];
@@ -75,11 +76,13 @@ class CartController extends Controller
             }
             else
                 $total='To be determined';
-
+            if($offShipping||$jacketsDiscounted||$offShoes>0)
+                $discounts=true;
             $calculatedData=[
                 'subtotal'=>$subtotal,
                 'totalShipping'=>$totalShipping,
                 'totalVat'=>$totalVat,
+                'discounts'=>$discounts,
                 'offShoes'=>$offShoes,
                 'offShipping'=>$offShipping,
                 'jacketsDiscounted'=>$jacketsDiscounted,

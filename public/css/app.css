@@ -10827,3 +10827,7 @@ textarea.form-control-lg {
 .create-container label {
   margin-bottom: 0.46rem;
 }
+
+.receipt span {
+  display: block;
+}
