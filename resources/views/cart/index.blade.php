@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Cart</title>
@@ -39,7 +39,7 @@
                             <th scope="col">price</th>
                             <th scope="col">Shipped from</th>
                             <th scope="col">Weight</th>
-                            <th scope="col" colspan="1">Options</th>
+                            <th scope="col" colspan="2">Options</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,7 +53,16 @@
                                 <td>{{$product['Weight']}}</td>
                                 <td>
                                     <a href="{{$product['link']}}">
-                                        <button type="button" class="btn btn-dark shadow-none">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-dark shadow-none">View</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cart/{{$product['id']}}/edit">
+                                        <button type="button" class="btn btn-sm btn-outline-dark shadow-none">
+                                            <span class="material-symbols-outlined">
+                                                edit
+                                            </span>
+                                        </button>
                                     </a>
                                 </td>
                             </tr>
