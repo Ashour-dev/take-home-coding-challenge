@@ -16,6 +16,13 @@
         </div>
         @endif
     </div>
+    <div class="w-25 position-absolute top-0 end-0 pt-3 pe-3 text-center">
+        @if (session('item-updated'))
+        <div class="alert alert-success">
+            {{session('item-updated')}}
+        </div>
+        @endif
+    </div>
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
             <div class="col-8 mx-auto">

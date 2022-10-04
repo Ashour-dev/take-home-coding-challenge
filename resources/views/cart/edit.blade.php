@@ -17,8 +17,9 @@
             <h1 class="text-center">
                 Edit product
             </h1>
-            <form class="container-fluid px-5 mt-4 w-50 mx-auto" action="{{ route('cart.store') }}" method="post" enctype="multipart/form-data">
+            <form class="container-fluid px-5 mt-4 w-50 mx-auto" action="{{ route('cart.update',$cart) }}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row g-2 px-4">
                     <div class="col-6">
                         <label for="name">Name*</label>
