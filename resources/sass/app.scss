@@ -1,13 +1,8 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
+// Variables
+@import 'variables';
+
+// Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-.products-index-table *{
-    vertical-align: middle;
-}
-
-.create-container label{
-    margin-bottom: .46rem;
-}
-.receipt span{
-    display: block;
-}
