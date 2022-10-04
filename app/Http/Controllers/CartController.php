@@ -16,7 +16,36 @@ class CartController extends Controller
     public function index()
     {
         $cart=Cart::all();
-        return view('cart.index',compact('cart'));
+        if(isset($cart)){
+            $subtotal=0;
+            $totalShipping=0;
+            $shippingCalculatable=true;
+            $totalVat=0;
+            foreach($cart as $product){
+                $subtotal+=$product['Item_price'];
+                $totalVat+=$product['VAT'];
+                if($shippingCalculatable){
+                    if($product['Shipping']==null){
+                        $shippingCalculatable=false;
+                        $totalShipping='To be determined';
+                    }
+                    else
+                        $totalShipping+=$product['Shipping'];
+                }
+            }
+            if($shippingCalculatable)
+                $total=$subtotal+$totalShipping+$totalVat;
+            else
+                $total='To be determined';
+
+            $calculatedData=[
+                'subtotal'=>$subtotal,
+                'totalShipping'=>$totalShipping,
+                'totalVat'=>$totalVat,
+                'total'=>$total,
+            ];
+        }
+        return view('cart.index',compact('cart','calculatedData'));
     }
 
     /**
