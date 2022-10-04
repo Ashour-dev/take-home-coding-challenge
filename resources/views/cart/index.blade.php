@@ -92,7 +92,7 @@
                     </tbody>
                 </table>
                 @else
-                <h3 class=" my-5 text-center">Your Cart is Empty</h3>
+                <img class="w-100" src="https://www.adasglobal.com/img/empty-cart.png" alt="">
                 @endif
             </div>
         </div>

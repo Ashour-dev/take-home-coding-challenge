@@ -68,7 +68,7 @@ class CartController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'min:3','max:255'],
-            'Item_type' => ['required', 'string', 'min:3','max:255'],
+            'Item_type' => ['required', Rule::in(['','T-shirt','Blouse', 'Pants','Shoes','Jacket'])],
             'link' => ['required', 'string','min:10','max:65000'],
             'Item_price' => ['required', 'numeric','min:1'],
             'quantity' => ['required', 'numeric','min:1','max:5'],
@@ -130,7 +130,7 @@ class CartController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'min:3','max:255'],
-            'Item_type' => ['required', 'string', 'min:3','max:255'],
+            'Item_type' => ['required', Rule::in(['','T-shirt','Blouse', 'Pants','Shoes','Jacket'])],
             'link' => ['required', 'string','min:10','max:65000'],
             'Item_price' => ['required', 'numeric','min:1'],
             'quantity' => ['required', 'numeric','min:1','max:5'],
