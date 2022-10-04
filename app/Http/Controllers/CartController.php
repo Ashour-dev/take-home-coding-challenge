@@ -21,9 +21,29 @@ class CartController extends Controller
             $totalShipping=0;
             $shippingCalculatable=true;
             $totalVat=0;
+            $items=0;
+            $offShoes=0;
+            $offShipping=false;
+            $tops=0;
+            $jacketsDiscounted=false;
+            $jacketDiscount=0;
             foreach($cart as $product){
                 $subtotal+=$product['Item_price'];
                 $totalVat+=$product['VAT'];
+                if($product->Item_type=='Shoes')
+                    $offShoes+=($product->Item_price*10)/100;
+                if($product->Item_type=='T-shirt'||$product->Item_type=='Blouse'){
+                    if($product->quantity==1)
+                        $tops++;
+                    else{
+                        for($i=0;$i<$product->quantity;$i++)
+                            $tops++;
+                    }
+                }
+                if($product->Item_type=='Jacket'&&!$jacketsDiscounted){
+                    $jacketDiscount=$product->Item_price/2;
+                    $jacketsDiscounted=true;
+                }
                 if($shippingCalculatable){
                     if($product['Shipping']==null){
                         $shippingCalculatable=false;
@@ -32,9 +52,27 @@ class CartController extends Controller
                     else
                         $totalShipping+=$product['Shipping'];
                 }
+                if($product->quantity==1)
+                    $items++;
+                else{
+                    for($i=0;$i<$product->quantity;$i++)
+                        $items++;
+                }
             }
-            if($shippingCalculatable)
-                $total=$subtotal+$totalShipping+$totalVat;
+            if($tops<2)
+                $jacketsDiscounted=false;
+            if($shippingCalculatable){
+                if($items>=2){
+                    $totalShipping-=10;
+                    $offShipping=true;
+                }
+                if($totalShipping<0)
+                    $totalShipping=0;
+                if($jacketsDiscounted)
+                    $total=$subtotal+$totalShipping+$totalVat-$offShoes-$jacketDiscount;
+                else
+                    $total=$subtotal+$totalShipping+$totalVat-$offShoes;
+            }
             else
                 $total='To be determined';
 
@@ -42,6 +80,10 @@ class CartController extends Controller
                 'subtotal'=>$subtotal,
                 'totalShipping'=>$totalShipping,
                 'totalVat'=>$totalVat,
+                'offShoes'=>$offShoes,
+                'offShipping'=>$offShipping,
+                'jacketsDiscounted'=>$jacketsDiscounted,
+                'jacketDiscount'=>$jacketDiscount,
                 'total'=>$total,
             ];
         }

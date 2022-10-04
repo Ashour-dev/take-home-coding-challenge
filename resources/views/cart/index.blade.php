@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1 class="p-4">Cart</h1>
-    {{-- {{dd($calculatedData)}}; --}}
+    {{dd($calculatedData)}};
     <div class="position-absolute top-0 end-0 pt-3 pe-3 text-center">
         @if (session('item-added'))
         <div class="alert alert-success">
