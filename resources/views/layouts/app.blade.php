@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        @if (URL::current()!=url('/home'))
+                        @if (URL::current()!=url('/'))
                             <li class="nav-item">
                                 <a href="/home">
                                     <span class="material-symbols-outlined align-middle">

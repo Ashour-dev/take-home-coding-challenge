@@ -1,13 +1,22 @@
 <template>
     <div>
         <div class="products w-100 d-flex flex-wrap justify-content-between gap-4 p-5">
-            <Card v-for="(product,index) in products" :key="index" :product="product" />
+            <Card v-for="(product,index) in products" :key="index" :product="product" @itemAdded="notificationExecution" />
         </div>
     </div>
 </template>
 
 <script>
 import Axios from 'axios';
+import Vue from "vue";
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
+Vue.use(Toast, {
+    transition: "my-custom-fade",
+    maxToasts: 6,
+    newestOnTop: true
+});
 import Card from '../components/Card';
 export default {
     name:'App',
@@ -16,7 +25,8 @@ export default {
     },
     data(){
         return{
-            products:[]
+            products:[],
+            nItemAdded:false,
         }
     },
     methods:{
@@ -24,8 +34,28 @@ export default {
             Axios.get('/api/products')
                 .then(response=>{
                     this.products=response.data;
-                    console.log(this.products);
                 })
+        },
+        notification(){
+        this.$toast.success("Item added to Cart", {
+            position: "bottom-right",
+            timeout: 1041,
+            closeOnClick: true,
+            pauseOnFocusLoss: true,
+            pauseOnHover: true,
+            draggable: true,
+            draggablePercent: 0.6,
+            showCloseButtonOnHover: true,
+            hideProgressBar: true,
+            closeButton: "button",
+            icon: true,
+            rtl: false
+        });
+        },
+        notificationExecution(itemAdded){
+            if(itemAdded!=this.nItemAdded)
+                this.notification();
+            this.nItemAdded=itemAdded;
         },
     },
     created(){

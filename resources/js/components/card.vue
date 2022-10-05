@@ -11,7 +11,7 @@
                         <label class="position-absolute top-0 start-50 translate-middle" for="quantity">Qty</label>
                         <input class="form-control w-75 mx-auto" type="number" name="quantity" id="quantity" v-model="quantity" required min="1" max="5">
                     </div>
-                    <a type="button" class="btn btn-dark" @click="addToCart()">
+                    <a type="button" class="btn btn-dark" @click="addToCart(),$emit('itemAdded',itemAdded)">
                         <span class="material-symbols-outlined align-middle">add_shopping_cart</span>
                     </a>
                 </div>
@@ -27,7 +27,8 @@ export default {
     data(){
         return{
             quantity:1,
-            productToCart:null
+            productToCart:null,
+            itemAdded:null,
         }
     },
     methods:{
@@ -43,6 +44,7 @@ export default {
             .catch(function (error) {
                 console.log(error);
             });
+            this.itemAdded=!this.itemAdded;
         },
     },
 }

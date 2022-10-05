@@ -4,27 +4,24 @@
 
 @section('content')
     <h1 class="text-center">Cart</h1>
-    <div class="position-absolute top-0 end-0 pt-3 pe-3 text-center">
-        @if (session('item-added'))
-        <div class="alert alert-success">
+    @if (session('item-added'))
+        <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 me-3" role="alert">
             {{session('item-added')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        @endif
-    </div>
-    <div class="position-absolute top-0 end-0 pt-3 pe-3 text-center">
-        @if (session('item-updated'))
-        <div class="alert alert-success">
+    @endif
+    @if (session('item-updated'))
+        <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 me-3" role="alert">
             {{session('item-updated')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        @endif
-    </div>
-    <div class="position-absolute top-0 end-0 pt-3 pe-3 text-center">
-        @if (session('item-deleted'))
-        <div class="alert alert-danger">
+    @endif
+    @if (session('item-deleted'))
+        <div class="alert alert-danger alert-dismissible fade show position-fixed bottom-0 end-0 me-3" role="alert">
             {{session('item-deleted')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        @endif
-    </div>
+    @endif
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
             <div class="col-8 mx-auto">
