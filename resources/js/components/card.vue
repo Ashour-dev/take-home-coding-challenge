@@ -34,7 +34,15 @@ export default {
         addToCart(){
             this.productToCart=this.product;
             this.productToCart['quantity']=this.quantity;
-            console.log(this.productToCart);
+            axios.post('/api/addToCart', 
+                this.productToCart
+            )
+            .then(function (response) {
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         },
     },
 }
