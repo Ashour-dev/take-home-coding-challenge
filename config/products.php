@@ -74,5 +74,14 @@ return[
         'link'=>'https://www.adidas.it/t-shirt-loungewear-adicolor-essentials-trefoil/GN3414.html',
         'photo'=>'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5512027d0e94bd7ad4cac84005dd6d8_9366/T-shirt_LOUNGEWEAR_adicolor_Essentials_Trefoil_Grigio_GN3414_21_model.jpg',
     ],
+    [
+        'name'=> 'PANTALONI FUTURE ICONS EMBROIDERED BADGE OF SPORT',
+        'Item_type'=>'Pants',
+        'Country'=>'UK',
+        'Item_price'=>'65',
+        'Weight'=>'.4',
+        'link'=>'https://www.adidas.it/pantaloni-future-icons-embroidered-badge-of-sport/HK4540.html',
+        'photo'=>'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7fefd57f84c64291a314ae44009e0141_9366/Pantaloni_Future_Icons_Embroidered_Badge_of_Sport_Beige_HK4540_21_model.jpg',
+    ],
 
 ];

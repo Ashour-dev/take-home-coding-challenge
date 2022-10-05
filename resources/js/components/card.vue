@@ -1,14 +1,14 @@
 <template>
     <div class="position-relative card">
-        <div class="content p-2 h-100 d-none">
-            <h3>{{product.name}}</h3>
-            <span>{{product.Item_price}} &euro;</span>
-            <div class="buttons py-3 w-50 position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-around">
-                <a type="button" class="btn btn-primary" :href="product.link">View</a>
-                <a type="button" class="btn btn-dark" href="">
-                    <span class="material-symbols-outlined align-middle">add_shopping_cart</span>
-                </a>
-            </div>
+        <div class="content p-2 h-100 d-none text-center mt-5">
+                <h2 class="pb-3 text-capitalize">{{product.name}}</h2>
+                <span>{{product.Item_price}} &euro;</span>
+                <div class="buttons py-3 w-50 position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-around">
+                    <a type="button" class="btn btn-primary" :href="product.link">View</a>
+                    <a type="button" class="btn btn-dark" href="">
+                        <span class="material-symbols-outlined align-middle">add_shopping_cart</span>
+                    </a>
+                </div>
         </div>
         <img class="w-100 h-100 position-absolute rounded" :src="product.photo" :alt="product.name">
     </div>
@@ -33,6 +33,11 @@ export default {
     .content{
         z-index: 2;
         transition: display;
+    }
+    .card{
+        width: calc((100% / 3) - 2rem);
+        height: 20rem !important;
+        cursor: default;
     }
     .card:hover img{
             opacity: .75;

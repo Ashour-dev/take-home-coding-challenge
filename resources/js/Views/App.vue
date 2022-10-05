@@ -35,12 +35,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+#app {
+    font-family: 'Oswald', sans-serif;
+}
 
-    .products>*{
-        width: calc((100% / 3) - 2rem);
-        height: 20rem;
-        cursor: default;
-    }
 </style>
