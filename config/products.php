@@ -48,7 +48,7 @@ return[
         'photo'=>'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/5bd34c47-2319-4a3b-94a9-3b718be7028d/t-shirt-sportswear-nfVDMn.png  ',
     ],
     [
-        'name'=> 'PANTALONI ESSENTIALS FLEECE REGULAR TAPERED CARGO',
+        'name'=> 'Pantaloni Essentials Fleece Regular Tapered Cargo',
         'Item_type'=>'Pants',
         'Country'=>'CN',
         'Item_price'=>'55',
@@ -57,7 +57,7 @@ return[
         'photo'=>'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0491bdca9bbf4454a6dfae8001291207_9366/Pantaloni_Essentials_Fleece_Regular_Tapered_Cargo_Nero_HL2226_21_model.jpg',
     ],
     [
-        'name'=> 'GIACCA CON CAPPUCCIO ESSENTIALS INSULATED',
+        'name'=> 'Giacca Con Cappuccio Essentials Insulated',
         'Item_type'=>'Jacket',
         'Country'=>'US',
         'Item_price'=>'85',
@@ -66,7 +66,7 @@ return[
         'photo'=>'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a24d8566c489484eabadad4a00a9ea08_9366/Giacca_con_cappuccio_Essentials_Insulated_Blu_GT9165_21_model.jpg',
     ],
     [
-        'name'=> 'T-SHIRT LOUNGEWEAR ADICOLOR ESSENTIALS TREFOIL',
+        'name'=> 'T-Shirt Loungewear Adicolor Essentials Trefoil',
         'Item_type'=>'T-shirt',
         'Country'=>'UK',
         'Item_price'=>'28',
@@ -75,7 +75,7 @@ return[
         'photo'=>'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5512027d0e94bd7ad4cac84005dd6d8_9366/T-shirt_LOUNGEWEAR_adicolor_Essentials_Trefoil_Grigio_GN3414_21_model.jpg',
     ],
     [
-        'name'=> 'PANTALONI FUTURE ICONS EMBROIDERED BADGE OF SPORT',
+        'name'=> 'Pantaloni Future Icons Embroidered Badge Of Sport',
         'Item_type'=>'Pants',
         'Country'=>'UK',
         'Item_price'=>'65',

@@ -1912,6 +1912,19 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Card',
   props: {
     product: Object
+  },
+  data: function data() {
+    return {
+      quantity: 1,
+      productToCart: null
+    };
+  },
+  methods: {
+    addToCart: function addToCart() {
+      this.productToCart = this.product;
+      this.productToCart['quantity'] = this.quantity;
+      console.log(this.productToCart);
+    }
   }
 });
 
@@ -1978,8 +1991,10 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "content p-2 h-100 d-none text-center mt-5"
   }, [_c("h2", {
-    staticClass: "pb-3 text-capitalize"
-  }, [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.product.Item_price) + " €")]), _vm._v(" "), _c("div", {
+    staticClass: "pb-3"
+  }, [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _c("span", {
+    staticClass: "fs-5 d-block pt-3"
+  }, [_vm._v(_vm._s(_vm.product.Item_price) + " €")]), _vm._v(" "), _c("div", {
     staticClass: "buttons py-3 w-50 position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-around"
   }, [_c("a", {
     staticClass: "btn btn-primary",
@@ -1987,7 +2002,51 @@ var render = function render() {
       type: "button",
       href: _vm.product.link
     }
-  }, [_vm._v("View")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("img", {
+  }, [_c("span", {
+    staticClass: "material-symbols-outlined align-middle"
+  }, [_vm._v("open_in_new")])]), _vm._v(" "), _c("div", [_c("label", {
+    staticClass: "position-absolute top-0 start-50 translate-middle",
+    attrs: {
+      "for": "quantity"
+    }
+  }, [_vm._v("Qty")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.quantity,
+      expression: "quantity"
+    }],
+    staticClass: "form-control w-75 mx-auto",
+    attrs: {
+      type: "number",
+      name: "quantity",
+      id: "quantity",
+      required: "",
+      min: "1",
+      max: "5"
+    },
+    domProps: {
+      value: _vm.quantity
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.quantity = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-dark",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.addToCart();
+      }
+    }
+  }, [_c("span", {
+    staticClass: "material-symbols-outlined align-middle"
+  }, [_vm._v("add_shopping_cart")])])])]), _vm._v(" "), _c("img", {
     staticClass: "w-100 h-100 position-absolute rounded",
     attrs: {
       src: _vm.product.photo,
@@ -1996,20 +2055,7 @@ var render = function render() {
   })]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("a", {
-    staticClass: "btn btn-dark",
-    attrs: {
-      type: "button",
-      href: ""
-    }
-  }, [_c("span", {
-    staticClass: "material-symbols-outlined align-middle"
-  }, [_vm._v("add_shopping_cart")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
