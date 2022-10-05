@@ -2080,7 +2080,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("Posy-commerce")]), _vm._v(" "), _c("div", {
+  return _c("div", [_c("div", {
     staticClass: "products w-100 d-flex flex-wrap justify-content-between gap-4 p-5"
   }, _vm._l(_vm.products, function (product, index) {
     return _c("Card", {

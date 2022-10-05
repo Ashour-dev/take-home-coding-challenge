@@ -14,7 +14,6 @@
     <script src="{{ asset('js/front.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

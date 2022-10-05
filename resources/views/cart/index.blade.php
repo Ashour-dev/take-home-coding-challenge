@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Cart</title>
-</head>
-<body>
-    <h1 class="p-4">Cart</h1>
+@extends('layouts.app')
+
+@section('title','Cart')
+
+@section('content')
+    <h1 class="text-center">Cart</h1>
     <div class="position-absolute top-0 end-0 pt-3 pe-3 text-center">
         @if (session('item-added'))
         <div class="alert alert-success">
@@ -114,8 +108,7 @@
                     @endif
                 @endif
                 <span>Total: {{$calculatedData['total']}}</span>
-                </div>
-                @endif
+            </div>
+        @endif
     </div>
-</body>
-</html>
+@endsection
