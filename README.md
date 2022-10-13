@@ -129,3 +129,4 @@ Github, Bitbucket, etc.). **Reply** with the repo link to the **email** we sent.
 
 ##### Q: Do I need to provide a functional user interface to represent the task? Can I use a ready-made library that implements all the required functionalities?
 ###### A: No, the task is clearly about assessing your technical knowledge and problem solving from a design and architecture point of view; not showing this means you are failing the task requirements.
+![Mockup](https://dl.dropboxusercontent.com/s/vzxjzl27l9ekvhx/Front-end%20code%20challenge.png)
