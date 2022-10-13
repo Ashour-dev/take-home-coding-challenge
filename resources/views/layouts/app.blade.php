@@ -34,7 +34,7 @@
                     <ul class="navbar-nav ms-auto">
                         @if (URL::current()!=url('/'))
                             <li class="nav-item">
-                                <a href="/home">
+                                <a href="/">
                                     <span class="material-symbols-outlined align-middle">
                                         home
                                     </span>

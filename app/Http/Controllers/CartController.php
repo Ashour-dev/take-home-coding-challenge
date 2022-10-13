@@ -146,6 +146,17 @@ class CartController extends Controller
         return redirect()->route('cart.index')->with('item-deleted','Your item was deleted successfully');
     }
 
+
+    public function empty(cart $cart){
+        $cart->truncate();
+        return redirect()->route('cart.index');
+    }
+
+
+
+
+
+
     public function calculateCartData($cart){
         if(isset($cart)){
             $subtotal=0;

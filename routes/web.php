@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/cart',"CartController");
+Route::put('/cart',"CartController@empty")->name('cart.empty');
 
 Auth::routes();
 

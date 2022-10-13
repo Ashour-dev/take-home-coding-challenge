@@ -25,9 +25,22 @@
     <div class="container-fluid">
         <div class="row w-100 justify-content-center">
             <div class="col-8 mx-auto">
-                <a class="float-end mb-3" href="cart/create">
-                    <button type="button" class="btn btn-outline-primary">Add new Item</button>
-                </a>
+                <div class="float-end mb-3 d-flex gap-2">
+                    <a href="cart/create">
+                        <button type="button" class="btn btn-outline-primary">Add new Item</button>
+                    </a>
+                    @if (count($cart)!=0)
+                        <form action="{{ route('cart.empty') }}" method="POST" class="cart-form-Emptier">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-sm btn-outline-danger shadow-none h-100">
+                                <span class="material-symbols-outlined align-middle">
+                                    delete_forever
+                                </span>
+                            </button>
+                        </form>
+                    @endif
+                </div>
                 @if (count($cart)!=0)
                 <table class="table w-100 table-hover text-center">
                     <thead>
